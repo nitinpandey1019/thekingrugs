@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The King Rugs | Products</title>
+  <link rel="icon" href="images/logo2.jpeg" type="image/jpeg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-nav">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo2.jpeg" alt="The King Rugs Logo">
+          <span class="brand-name">The King Rugs</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="container reveal">
+      <h1>Our Carpets</h1>
+      <p class="section-sub mb-0">Tap any rug to open the sliding gallery and explore the full collection.</p>
+    </div>
+  </section>
+
+  <section class="section products-section" style="padding-top:1.25rem;">
+    <div class="container">
+      <div class="products-layout">
+
+        <!-- Filters: material + size together -->
+        <aside class="product-filters" id="product-filters">
+          <div class="filter-head">
+            <h2>Filters</h2>
+            <button type="button" class="filter-clear" id="filter-clear">Clear all</button>
+          </div>
+          <div class="filter-group" id="filter-combo-group">
+            <h3>Material &amp; Size</h3>
+            <div class="filter-options" id="filter-combo"></div>
+          </div>
+          <div class="filter-group" id="filter-pattern-group">
+            <h3>Pattern</h3>
+            <div class="filter-options" id="filter-pattern"></div>
+          </div>
+        </aside>
+
+        <div class="products-main">
+          <div class="products-toolbar">
+            <button type="button" class="filter-toggle" id="filter-toggle">
+              <i class="bi bi-funnel"></i> Filter
+            </button>
+          </div>
+
+          <div class="product-grid" id="product-grid">
+            <!-- filled by js/products-render.js -->
+          </div>
+
+          <p class="products-empty d-none" id="products-empty">No carpets match these filters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="filter-backdrop d-none" id="filter-backdrop"></div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row gy-4 footer-grid">
+        <div class="col-12 col-md-3 footer-about">
+          <h5>The King Rugs</h5>
+          <p class="small">Handcrafted rugs blending tradition and modern elegance for unmatched comfort and style.</p>
+        </div>
+        <div class="col-6 col-md-3 footer-links">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html">Home</a></li>
+            <li class="mb-2"><a href="products.html">Products</a></li>
+            <li class="mb-2"><a href="about.html">About</a></li>
+            <li class="mb-2"><a href="contact.html">Contact</a></li>
+            <li class="mb-2"><a href="admin.html">Admin</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 footer-contact">
+          <h5>Contact</h5>
+          <p class="small mb-1"><i class="bi bi-geo-alt-fill me-1" style="color:var(--gold)"></i> 145 Bhadohi Gopiganj Road, Bhadohi, UP</p>
+          <p class="small mb-1"><i class="bi bi-telephone-fill me-1" style="color:var(--gold)"></i> +91 8853152715</p>
+          <p class="small"><i class="bi bi-envelope-fill me-1" style="color:var(--gold)"></i> thekingrugs@gmail.com</p>
+        </div>
+        <div class="col-12 col-md-3 footer-social">
+          <h5>Follow Us</h5>
+          <a href="https://www.facebook.com/the.king.rugs" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/naushadali120693" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>&copy; <span class="js-year"></span> The King Rugs. All Rights Reserved.</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/products-data.js"></script>
+  <script src="js/products-render.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/products-filter.js"></script>
+</body>
+</html>

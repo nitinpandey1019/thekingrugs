@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The King Rugs | Contact</title>
+  <link rel="icon" href="images/logo2.jpeg" type="image/jpeg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-nav">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo2.jpeg" alt="The King Rugs Logo">
+          <span class="brand-name">The King Rugs</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="container reveal">
+      <h1>Contact Us</h1>
+      <p class="section-sub mb-0">Have a question about our rugs? We’d love to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:2rem;">
+    <div class="container">
+      <div class="contact-layout">
+        <form class="contact-form reveal">
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+          </div>
+          <div class="mb-4">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="Write your message here" required></textarea>
+          </div>
+          <button type="submit" class="btn-king">Send Message</button>
+        </form>
+
+        <div class="contact-info reveal reveal-delay-1">
+          <h5>Get in Touch</h5>
+          <p><strong>Address:</strong> 145 Bhadohi Gopiganj Road, Bhadohi, Uttar Pradesh, India, 221303</p>
+          <p><strong>Phone:</strong> <a href="tel:+918853152715">+91 8853152715</a></p>
+          <p><strong>Email:</strong> <a href="mailto:thekingrugs@gmail.com">thekingrugs@gmail.com</a></p>
+          <h6 class="mt-4 mb-2" style="font-family:var(--font-display);color:var(--gold-deep);font-size:1.15rem;">Business Hours</h6>
+          <p class="mb-0">Mon – Sat: 9:00 AM – 10:00 PM</p>
+          <div class="map-wrap ratio ratio-16x9">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.21286331287!2d82.49172227548225!3d25.347706077614326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398fde037ccb13df%3A0x487405bea24c76ec!2sBhadohi%20-%20Gopiganj%20Rd%2C%20Uttar%20Pradesh!5e1!3m2!1sen!2sin!4v1754805284350!5m2!1sen!2sin"
+              style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="The King Rugs location"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade send-modal" id="sendModal" tabindex="-1" aria-labelledby="sendModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <button type="button" class="send-modal-close" data-bs-dismiss="modal" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+
+        <div class="send-modal-head">
+          <span class="send-modal-icon"><i class="bi bi-info-lg"></i></span>
+          <h3 id="sendModalTitle">Messaging is not available right now</h3>
+          <p>Please reach us directly on WhatsApp, email or phone below.</p>
+        </div>
+
+        <div class="send-options">
+          <a class="send-option send-option--whatsapp" id="send-whatsapp" href="#" target="_blank" rel="noopener">
+            <span class="send-option-icon"><i class="bi bi-whatsapp"></i></span>
+            <span class="send-option-text">
+              <strong>WhatsApp</strong>
+              <small>+91 8853152715</small>
+            </span>
+            <i class="bi bi-chevron-right send-option-arrow"></i>
+          </a>
+          <a class="send-option send-option--email" id="send-email" href="#">
+            <span class="send-option-icon"><i class="bi bi-envelope-fill"></i></span>
+            <span class="send-option-text">
+              <strong>Email</strong>
+              <small>thekingrugs@gmail.com</small>
+            </span>
+            <i class="bi bi-chevron-right send-option-arrow"></i>
+          </a>
+          <a class="send-option send-option--call" href="tel:+918853152715">
+            <span class="send-option-icon"><i class="bi bi-telephone-fill"></i></span>
+            <span class="send-option-text">
+              <strong>Call us</strong>
+              <small>Mon – Sat, 9 AM – 10 PM</small>
+            </span>
+            <i class="bi bi-chevron-right send-option-arrow"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row gy-4 footer-grid">
+        <div class="col-12 col-md-3 footer-about">
+          <h5>The King Rugs</h5>
+          <p class="small">Handcrafted rugs blending tradition and modern elegance for unmatched comfort and style.</p>
+        </div>
+        <div class="col-6 col-md-3 footer-links">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html">Home</a></li>
+            <li class="mb-2"><a href="products.html">Products</a></li>
+            <li class="mb-2"><a href="about.html">About</a></li>
+            <li class="mb-2"><a href="contact.html">Contact</a></li>
+            <li class="mb-2"><a href="admin.html">Admin</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 footer-contact">
+          <h5>Contact</h5>
+          <p class="small mb-1"><i class="bi bi-geo-alt-fill me-1" style="color:var(--gold)"></i> 145 Bhadohi Gopiganj Road, Bhadohi, UP</p>
+          <p class="small mb-1"><i class="bi bi-telephone-fill me-1" style="color:var(--gold)"></i> +91 8853152715</p>
+          <p class="small"><i class="bi bi-envelope-fill me-1" style="color:var(--gold)"></i> thekingrugs@gmail.com</p>
+        </div>
+        <div class="col-12 col-md-3 footer-social">
+          <h5>Follow Us</h5>
+          <a href="https://www.facebook.com/the.king.rugs" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/naushadali120693" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>&copy; <span class="js-year"></span> The King Rugs. All Rights Reserved.</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/contact-popup.js"></script>
+</body>
+</html>
