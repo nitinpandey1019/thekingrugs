@@ -67,103 +67,45 @@
     }, DURATION);
   }
 
-  /* ----- Featured Pieces circular carousel ----- */
-  const featured = document.getElementById("featured-carousel");
-  if (featured) {
-    const cards = Array.from(featured.querySelectorAll(".featured-card"));
-    const dotsWrap = document.getElementById("featured-dots");
-    const prevBtn = featured.querySelector(".featured-prev");
-    const nextBtn = featured.querySelector(".featured-next");
-    const total = cards.length;
+  /* ----- Featured Pieces: one image that flips to the next ----- */
+  const flip = document.getElementById("featured-flip");
+  if (flip) {
+    const inner = flip.querySelector(".flip-inner");
+    const front = flip.querySelector(".flip-front");
+    const back = flip.querySelector(".flip-back");
+    const images = Array.from(flip.querySelectorAll(".featured-flip-source img")).map((img) => ({
+      src: img.getAttribute("src"),
+      alt: img.getAttribute("alt") || "",
+    }));
+    const INTERVAL = 1000;
     let index = 0;
+    let turns = 0;
     let timer = null;
-    const INTERVAL = 5000;
 
-    cards.forEach((_, i) => {
-      const dot = document.createElement("button");
-      dot.type = "button";
-      dot.className = "featured-dot" + (i === 0 ? " active" : "");
-      dot.setAttribute("aria-label", "Show piece " + (i + 1));
-      dot.addEventListener("click", () => goTo(i));
-      dotsWrap && dotsWrap.appendChild(dot);
-    });
-
-    const dots = Array.from(document.querySelectorAll("#featured-dots .featured-dot"));
-
-    function offsetOf(i) {
-      let d = (i - index + total) % total;
-      if (d > total / 2) d -= total;
-      return d;
+    function flipNext() {
+      index = (index + 1) % images.length;
+      turns += 1;
+      const face = turns % 2 === 1 ? back : front;
+      face.src = images[index].src;
+      face.alt = images[index].alt;
+      inner.style.transform = "rotateY(" + turns * 180 + "deg)";
     }
 
-    function applyPositions() {
-      cards.forEach((card, i) => {
-        card.className = "featured-card";
-        const d = offsetOf(i);
-        if (d === 0) card.classList.add("is-center");
-        else if (d === -1) card.classList.add("is-left");
-        else if (d === 1) card.classList.add("is-right");
-        else if (d === -2) card.classList.add("is-far-left");
-        else if (d === 2) card.classList.add("is-far-right");
-        else card.classList.add("is-back");
-      });
-      dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
-    }
-
-    function goTo(i) {
-      index = (i + total) % total;
-      applyPositions();
-      restart();
-    }
-
-    function next() {
-      goTo(index + 1);
-    }
-    function prev() {
-      goTo(index - 1);
-    }
-
-    function restart() {
+    function start() {
       clearInterval(timer);
-      timer = setInterval(next, INTERVAL);
+      timer = setInterval(flipNext, INTERVAL);
     }
 
-    prevBtn && prevBtn.addEventListener("click", prev);
-    nextBtn && nextBtn.addEventListener("click", next);
+    function stop() {
+      clearInterval(timer);
+    }
 
-    cards.forEach((card) => {
-      card.addEventListener("click", () => {
-        const i = Number(card.getAttribute("data-index"));
-        if (i === index) {
-          window.location.href = "products.html";
-          return;
-        }
-        goTo(i);
-      });
-    });
-
-    featured.addEventListener("mouseenter", () => clearInterval(timer));
-    featured.addEventListener("mouseleave", restart);
-
-    let touchX = 0;
-    featured.addEventListener(
-      "touchstart",
-      (e) => {
-        touchX = e.changedTouches[0].screenX;
-      },
-      { passive: true }
-    );
-    featured.addEventListener(
-      "touchend",
-      (e) => {
-        const dx = e.changedTouches[0].screenX - touchX;
-        if (Math.abs(dx) > 40) (dx < 0 ? next : prev)();
-      },
-      { passive: true }
-    );
-
-    applyPositions();
-    restart();
+    if (images.length > 1) {
+      flip.addEventListener("mouseenter", stop);
+      flip.addEventListener("mouseleave", start);
+      document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
+      start();
+    }
   }
 
   /* ----- Product lightbox / sliding gallery ----- */

@@ -182,5 +182,16 @@
 
   backdrop.addEventListener("click", closeFilters);
 
+  var closeBtn = document.getElementById("filter-close");
+  if (closeBtn) closeBtn.addEventListener("click", closeFilters);
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && filtersEl.classList.contains("is-open")) closeFilters();
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth >= 992 && filtersEl.classList.contains("is-open")) closeFilters();
+  });
+
   applyFilters();
 })();
